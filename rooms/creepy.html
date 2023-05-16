@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>...</title>
+    <style>
+      body {
+        background-color: black;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body">
+  <script>
+    function playAudio() {
+      const audio = new Audio("../audio/horror_atmosphere.ogg");
+      audio.loop = true;
+      audio.play().then(() => {
+        document.body.removeEventListener("click", playAudio);
+      }).catch(error => {
+        console.error("Error playing audio:", error);
+      });
+    }
+
+    document.body.addEventListener("click", playAudio);
+  </script>
+  </body>
+</html>
